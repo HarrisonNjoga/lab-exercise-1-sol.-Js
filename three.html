@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question (iii)</title>
+</head>
+<body>
+
+	
+	<input type="number" value="" placeholder="Enter your year of Birth" id="dob"/><br>		
+	<p id="result"></p>
+	<button id="compute" onclick="computeAge()">Compute Age</button>
+	
+	<script type="text/javascript">
+		
+		function computeAge(){
+			var dob = document.getElementById("dob").value;
+			var today = new Date();//Create a date object
+			var currentYear  = today.getFullYear();//Get the current Full Year
+			if(dob==''){
+				document.getElementById("result").innerHTML = "Wrong Input";	
+				return false; //Stop Execution
+			}
+			var age = currentYear-dob;
+			
+			document.getElementById("result").innerHTML = age;
+		}
+
+	</script>
+</body>
+</html>

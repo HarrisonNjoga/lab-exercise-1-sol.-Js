@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question (iv)</title>
+</head>
+<body>
+	<input type="number" value="" placeholder="Enter a Number" id="a"/><br>		
+	<p id="result"></p>
+	<button id="add" onclick="addNumber()">Next Number</button>
+	<button id="compute" onclick="displayConsole()">See Array</button>
+
+	<script type="text/javascript">
+		
+		var myArray = new Array();
+
+		var count = 0;
+		function addNumber(){
+			if(count<10){
+				var a = document.getElementById("a").value; //get the number 
+				if(a==''){
+					document.getElementById("result").innerHTML = "Fill in the Number"; //give an error if the value is empty
+					return false;
+				}
+				document.getElementById("a").value = "";
+				myArray[count]=a; //store the element in the array at the index denoted by count
+				count++;
+			}else{
+				document.getElementById("result").value = "You have entered 10 numbers. Click on See Array";
+			}
+		}
+
+		function displayConsole(){
+			if(count<10){
+				document.getElementById("result").innerHTML = "You have entered "+(count)+" numbers. Enter ten numbers"; //give an error if the count is not ten	
+			}else{
+				document.getElementById("result").innerHTML = "Check the console for the output. Right Click on the page, click inspect element, and click on the console tab"; //
+				console.log(myArray);
+			}
+		}
+
+	</script>
+</body>
+</html>

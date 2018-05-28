@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question (v)</title>
+</head>
+<body>
+	<input type="text" value="" placeholder="Enter first Name" id="firstname"/><br>		
+	<input type="text" value="" placeholder="Enter last Name" id="lastname"/><br>		
+	<input type="text" value="" placeholder="Enter email address" id="email"/><br>		
+	<input type="text" value="" placeholder="Enter password" id="password"/><br>		
+	<input type="text" value="" placeholder="Enter Adm. Number" id="admissionnumber"/><br>		
+	<p id="result"></p>	
+	<button id="compute" onclick="showObject()">See Object</button>
+
+	<script type="text/javascript">
+		
+		var person = {firstname:"",lastname:"",email:"",password:"",admissionnumber:""};
+		
+
+		function showObject(){
+			//Get Values
+			var firstname = document.getElementById("firstname").value; 
+			var lastname = document.getElementById("lastname").value; 
+			var email = document.getElementById("email").value; 
+			var password = document.getElementById("password").value; 
+			var admissionnumber = document.getElementById("admissionnumber").value; 
+			
+
+			//check to see if all are filled
+
+			if(firstname==""||lastname==""||email==""||password==""||admissionnumber==""){
+				document.getElementById("result").innerHTML = "Enter all the details";
+				return false; //Stop Execution
+			}
+
+			//Populate Object
+			person.firstname = firstname;  //Or person["firstname"] = firstname;
+			person.lastname = lastname;
+			person.email = email;
+			person.password = password;
+			person.admissionnumber = admissionnumber;
+
+			console.log(person);//Display the object in the Console
+			document.getElementById("result").innerHTML = "Check the console for the output. Right Click on the page, click inspect element, and click on the console tab"; //
+
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question One</title>
+</head>
+<body>
+	<div id="time"></div>
+	<script type="text/javascript">
+		var months_list = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+		var today = new Date();//Create a date object
+		var currentHour = today.getHours(); //Get the current hour
+		var currentMinute = today.getMinutes();//Get the current minute
+		var currentSecond = today.getSeconds();//Get the current Second
+		var currentDate = today.getDate();//Get the current date
+		var currentMonth = today.getMonth();//Get the current Month 
+		var currentYear  = today.getFullYear();//Get the current Full Year
+		var time_ext = "AM";
+		if(currentHour>12){			
+			time_ext = "PM";
+			currentHour = currentHour-12; //Convert from 24 hours to 12 hour format
+		}else if(currentHour==12){
+			time_ext = "PM";
+		}
+		document.getElementById("time").innerHTML = "Welcome, Today is "+currentDate+" "+months_list[currentMonth]+" and the time is "+currentHour+" :"+currentMinute+" "+time_ext;
+	</script>
+</body>
+</html>
